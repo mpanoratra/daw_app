@@ -1,0 +1,31 @@
+<h1>Listing subcontractors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner or ceo</th>
+      <th>Checks payable to</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subcontractors.each do |subcontractor| %>
+      <tr>
+        <td><%= subcontractor.name %></td>
+        <td><%= subcontractor.owner_or_ceo %></td>
+        <td><%= subcontractor.checks_payable_to %></td>
+        <td><%= link_to 'Show', subcontractor %></td>
+        <td><%= link_to 'Edit', edit_subcontractor_path(subcontractor) %></td>
+        <td><%= link_to 'Destroy', subcontractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subcontractor', new_subcontractor_path %>

@@ -1,5 +1,16 @@
 source 'https://rubygems.org'
 
+gem 'pg'
+gem 'execjs'
+gem 'therubyracer'
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
+gem 'money'
+gem 'monetize'
+gem 'jquery-turbolinks'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

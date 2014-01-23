@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subcontractor.name %>
+</p>
+
+<p>
+  <strong>Owner or ceo:</strong>
+  <%= @subcontractor.owner_or_ceo %>
+</p>
+
+<p>
+  <strong>Checks payable to:</strong>
+  <%= @subcontractor.checks_payable_to %>
+</p>
+
+<%= link_to 'Edit', edit_subcontractor_path(@subcontractor) %> |
+<%= link_to 'Back', subcontractors_path %>
