@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @labor.employee_id %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @labor.hours %>
+</p>
+
+<p>
+  <strong>Date of labor:</strong>
+  <%= @labor.date_of_labor %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @labor.task_id %>
+</p>
+
+<%= link_to 'Edit', edit_labor_path(@labor) %> |
+<%= link_to 'Back', labors_path %>

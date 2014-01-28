@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @unit.project_id %>
+</p>
+
+<p>
+  <strong>Unit Number or Address:</strong>
+  <%= @unit.name_or_address %>
+</p>
+
+<%= link_to 'Edit', edit_unit_path(@unit) %> |
+<%= link_to 'Back', units_path %>

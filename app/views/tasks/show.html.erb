@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @task.unit_id %>
+</p>
+
+<p>
+  <strong>Trade:</strong>
+  <%= @task.trade %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @task.budget %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

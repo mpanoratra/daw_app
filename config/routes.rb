@@ -1,4 +1,10 @@
 HoursApp::Application.routes.draw do
+  resources :units
+
+  resources :tasks
+
+  resources :labors
+
   get "welcome/home"
   resources :subcontractors
   root 'welcome#home'
