@@ -1,0 +1,25 @@
+<tr>
+  <td><div class="view_project_units">View Units</div></td>
+</tr>
+<tr>
+  <td colspan="100%">
+    <div class="project_units">
+      Units
+      <table border="1.0">
+        <thead>
+          <tr>
+            <th colspan="100%">Name or Address</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% project.units.each do |unit| %>
+          <tr>
+            <td colspan="100%"><%= unit.name_or_address %></td>
+          </tr>
+          <%= render "tasks/task_table", unit: unit %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </td>
+</tr>

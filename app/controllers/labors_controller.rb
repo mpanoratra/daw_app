@@ -15,6 +15,8 @@ class LaborsController < ApplicationController
   # GET /labors/new
   def new
     @labor = Labor.new
+    @employees = Employee.all
+    
   end
 
   # GET /labors/1/edit

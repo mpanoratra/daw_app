@@ -9,6 +9,7 @@ gem 'rolify'
 gem 'money'
 gem 'monetize'
 gem 'jquery-turbolinks'
+gem 'thin'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

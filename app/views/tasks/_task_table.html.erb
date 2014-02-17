@@ -1,0 +1,25 @@
+<tr>
+  <td><div class="view_unit_tasks">View tasks</div></td>
+</tr>
+<tr><td colspan="100%">
+    <div class="unit_tasks">
+      Tasks
+      <table border="1.0">
+        <thead>
+          <tr>
+            <th>Trade</th>
+            <th>Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% unit.tasks.each do |task| %>
+          <tr>
+            <td><%= task.trade%></td>
+            <td><%= task.budget %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </td>
+</tr>

@@ -16,7 +16,7 @@
   <tbody>
     <% @labors.each do |labor| %>
       <tr>
-        <td><%= labor.employee_id %></td>
+        <td><%= labor.employee.name %></td>
         <td><%= labor.hours %></td>
         <td><%= labor.date_of_labor %></td>
         <td><%= labor.task_id %></td>

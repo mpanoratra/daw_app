@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
+    <%= f.collection_select(:employee_id, @employees, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :hours %><br>
