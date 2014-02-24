@@ -29,6 +29,9 @@
   <strong>End date:</strong>
   <%= @project.end_date %>
 </p>
+<p>
+  <%= render "projects/project_details", project: @project %>
+</p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

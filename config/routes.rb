@@ -1,17 +1,18 @@
 HoursApp::Application.routes.draw do
   resources :units
-
+  resources :subcontractors
   resources :tasks
-
   resources :labors
+  resources :employees
+  resources :projects
+
+  get '/hours_report/select', to: 'welcome#select_dates_for_hours'
+  post '/hours_report/select', to: 'welcome#get_employee_hours_for_dates'
+  #get '/hours_report/select', to: 'welcome#select_dates_for_hours'
 
   get "welcome/home"
-  resources :subcontractors
   root 'welcome#home'
 
-  resources :employees
-
-  resources :projects
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

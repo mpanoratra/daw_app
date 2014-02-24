@@ -7,6 +7,11 @@ class LaborsController < ApplicationController
     @labors = Labor.all
   end
 
+  def report_labor
+    
+  end
+
+
   # GET /labors/1
   # GET /labors/1.json
   def show

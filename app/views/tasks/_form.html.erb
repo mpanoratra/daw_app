@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :unit_id %><br>
-    <%= f.number_field :unit_id %>
+    <%= f.collection_select(:unit_id, Unit.all, :id, :name_or_address) %>
   </div>
   <div class="field">
     <%= f.label :trade %><br>
