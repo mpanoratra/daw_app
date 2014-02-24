@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def home
+    if user_signed_in? then @user = current_user end
   end
 
   def hours_report

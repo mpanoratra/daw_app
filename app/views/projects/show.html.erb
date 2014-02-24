@@ -1,37 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div id="project_details">
+<h2>Project Details</h2>
   <strong>Name:</strong>
   <%= @project.name %>
-</p>
-
-<p>
   <strong>Proj num:</strong>
   <%= @project.proj_num %>
-</p>
-
-<p>
   <strong>Contract num:</strong>
   <%= @project.contract_num %>
-</p>
-
-<p>
   <strong>Location:</strong>
   <%= @project.location %>
-</p>
-
-<p>
   <strong>Start date:</strong>
   <%= @project.start_date %>
-</p>
-
-<p>
   <strong>End date:</strong>
   <%= @project.end_date %>
-</p>
-<p>
+</div>
+
+<div id="unit_task_info">
   <%= render "projects/project_details", project: @project %>
-</p>
+</div>
+
+<!-- TODO: make it so only admin profiles see this section -->
+<div id="project_users">
+  Users that can see this project:
+  <% if @project.users.blank? %>
+    No users are currently assigned to this project!
+  <% else %>
+    <% @project.users.each do |user| %>
+      <%= user.email%>
+    <% end %>
+  <% end %>
+  <%= link_to "Add a user to this project", project_add_user_to_project_path, :id => @project.id %>
+</div>
+
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

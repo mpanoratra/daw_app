@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :add_user_to_project]
 
   # GET /projects
   # GET /projects.json
@@ -15,6 +15,9 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+  end
+
+  def add_user_to_project
   end
 
   # GET /projects/1/edit
