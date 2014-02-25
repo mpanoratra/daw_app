@@ -3,10 +3,6 @@ class WelcomeController < ApplicationController
     if user_signed_in? then @user = current_user end
   end
 
-  def hours_report
-    @labors = Labor.all
-  end
-
   def select_dates_for_hours
 
   end

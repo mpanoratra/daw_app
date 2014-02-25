@@ -4,12 +4,14 @@ HoursApp::Application.routes.draw do
   resources :tasks
   resources :labors
   resources :employees
-  resources :projects do
-    get 'add_user_to_project'
-  end
+  resources :users, only: [:index]
+  resources :projects 
+  get 'projects/:id/add_user_to_project', to: 'projects#add_user_to_project', as: 'add_user_to_project'
+  post 'projects/:id/save_user_project', to: 'projects#save_user_project', as: 'save_user_project'
+
 
   get '/hours_report/select', to: 'welcome#select_dates_for_hours'
-  post '/hours_report/select', to: 'welcome#get_employee_hours_for_dates'
+  post '/hours_report/show', to: 'welcome#get_employee_hours_for_dates'
   #get '/hours_report/select', to: 'welcome#select_dates_for_hours'
 
   get "welcome/home"

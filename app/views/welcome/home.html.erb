@@ -3,8 +3,6 @@ Welcome <%= @user.email %> to the Daw/RRDW Site click on a link to see more info
 <%= link_to "Subcontractors", subcontractors_path %>
 <%= link_to "Projects", projects_path %>
 <%= link_to "Employees", employees_path %>
-<%= link_to "Sign out", destroy_user_session_path, method: 'delete' %>
 <% else %>
-  <%= link_to "Sign in", new_user_session_path %>
-
+Please sign in.
 <% end %>

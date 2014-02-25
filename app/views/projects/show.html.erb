@@ -22,15 +22,27 @@
 
 <!-- TODO: make it so only admin profiles see this section -->
 <div id="project_users">
-  Users that can see this project:
-  <% if @project.users.blank? %>
-    No users are currently assigned to this project!
-  <% else %>
-    <% @project.users.each do |user| %>
-      <%= user.email%>
-    <% end %>
-  <% end %>
-  <%= link_to "Add a user to this project", project_add_user_to_project_path, :id => @project.id %>
+  <table>
+    <thead>
+      <tr>
+        <th>Users that can see this project:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @project.users.blank? %>
+        <tr>
+          <td>No users are currently assigned to this project!</td>
+        </tr>
+      <% else %>
+        <% @project.users.each do |user| %>
+          <tr>
+            <td><%= user.email%></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Add a user to this project", add_user_to_project_path(@project) %>
 </div>
 
 
