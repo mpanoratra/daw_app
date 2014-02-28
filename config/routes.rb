@@ -5,9 +5,14 @@ HoursApp::Application.routes.draw do
   resources :labors
   resources :employees
   resources :users, only: [:index]
+  resources :projects_users, only: [:destroy]
+
   resources :projects 
   get 'projects/:id/add_user_to_project', to: 'projects#add_user_to_project', as: 'add_user_to_project'
   post 'projects/:id/save_user_project', to: 'projects#save_user_project', as: 'save_user_project'
+  get 'projects/:id/get_units', to: 'projects#get_units'
+
+  get 'units/:id/get_tasks', to: 'units#get_tasks'
 
 
   get '/hours_report/select', to: 'welcome#select_dates_for_hours'

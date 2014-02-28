@@ -17,6 +17,11 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+  def get_units
+    @project = Project.find(params[:project_id])
+    @units = @project.units
+  end
+
   def add_user_to_project
     @possible_users = User.where.not(id: (@project.users.pluck(:id)))
   end
@@ -25,9 +30,8 @@ class ProjectsController < ApplicationController
     user = User.find(params[:user_id])
     @project.users << user
     redirect_to @project
-
-
   end
+
 
   # GET /projects/1/edit
   def edit

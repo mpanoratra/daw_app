@@ -37,6 +37,7 @@
         <% @project.users.each do |user| %>
           <tr>
             <td><%= user.email%></td>
+            <td><%= link_to "Remove user from project", projects_user_path((@project.projects_users.find_by_user_id(user.id)).id), method: 'delete' %></td>
           </tr>
         <% end %>
       <% end %>

@@ -7,6 +7,11 @@ class UnitsController < ApplicationController
     @units = Unit.all
   end
 
+  def get_tasks
+    @unit = Unit.find(params[:unit_id])
+    @tasks = @unit.tasks
+  end
+
   # GET /units/1
   # GET /units/1.json
   def show
