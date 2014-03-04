@@ -1,0 +1,1 @@
+jQuery.on("page:change")

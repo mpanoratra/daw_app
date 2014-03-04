@@ -21,6 +21,8 @@ class LaborsController < ApplicationController
   def new
     @labor = Labor.new
     @employees = Employee.all
+    @units = Unit.all
+    @tasks = Task.all
     
   end
 
@@ -76,6 +78,6 @@ class LaborsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def labor_params
-      params.require(:labor).permit(:employee_id, :hours, :date_of_labor, :task_id)
+      params.require(:labor).permit(:employee_id, :hours, :date_of_labor, :task_id, :unit_id)
     end
 end

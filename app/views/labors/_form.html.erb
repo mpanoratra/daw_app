@@ -24,8 +24,12 @@
     <%= f.date_select :date_of_labor %>
   </div>
   <div class="field">
+    <%= label_tag :unit_id %><br>
+    <%= collection_select("unit_id","", @units, :id, :name_or_address) %>
+  </div>
+  <div class="field">
     <%= f.label :task_id %><br>
-    <%= f.number_field :task_id %>
+    <%= f.collection_select(:task_id, @tasks, :id, :trade) %>
   </div>
   <div class="actions">
     <%= f.submit %>
