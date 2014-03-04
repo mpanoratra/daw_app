@@ -18,8 +18,10 @@ class ProjectsController < ApplicationController
   end
 
   def get_units
-    @project = Project.find(params[:project_id])
-    @units = @project.units
+    if Project.exists?(params[:id])
+      @project = Project.find(params[:id])
+      @units = @project.units
+    end
   end
 
   def add_user_to_project

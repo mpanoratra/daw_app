@@ -23,7 +23,8 @@ class LaborsController < ApplicationController
     @employees = Employee.all
     @units = Unit.all
     @tasks = Task.all
-    
+    @projects = Project.all
+    #TODO: remove some of these later so that they don't all get loaded... dynamically load on project select/ unit select
   end
 
   # GET /labors/1/edit

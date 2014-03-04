@@ -8,8 +8,10 @@ class UnitsController < ApplicationController
   end
 
   def get_tasks
-    @unit = Unit.find(params[:unit_id])
-    @tasks = @unit.tasks
+    if Unit.exists?(params[:id])
+      @unit = Unit.find(params[:id])
+      @tasks = @unit.tasks
+    end
   end
 
   # GET /units/1
