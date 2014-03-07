@@ -1,0 +1,17 @@
+test select employees page
+<%= form_tag report_labor_path do %>
+  Select a project
+  <%= collection_select("project_id","", @projects, :id, :name) %>
+  <div #employee_selection>
+    <div id="employee_select_intro">
+      Select all of the employees that worked on this project.
+    </div>
+    <div id="employee_select_options">
+      <select name="employees" id="emp_select_for_report">
+
+        
+      </select>
+    </div>
+  </div>
+  <%= button_tag "Next" %>
+<% end %>

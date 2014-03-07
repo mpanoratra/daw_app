@@ -1,8 +1,6 @@
 HoursApp::Application.routes.draw do
-  resources :units
   resources :subcontractors
   resources :tasks
-  resources :labors
   resources :employees
   resources :users, only: [:index]
   resources :projects_users, only: [:destroy]
@@ -12,14 +10,17 @@ HoursApp::Application.routes.draw do
   post 'projects/:id/save_user_project', to: 'projects#save_user_project', as: 'save_user_project'
   get 'projects/:id/get_units', to: 'projects#get_units', as: 'get_project_units'
 
+  resources :units
   get 'units/:id/get_tasks', to: 'units#get_tasks', as: 'get_unit_tasks'
 
-
-  get '/hours_report/select', to: 'welcome#select_dates_for_hours'
-  post '/hours_report/show', to: 'welcome#get_employee_hours_for_dates'
-  #get '/hours_report/select', to: 'welcome#select_dates_for_hours'
+  resources :labors
+  get 'report_labor/select', to: 'labors#select_employees_for_report', as: 'select_employees_for_labor_report'
+  post 'report_labor/report_hours', to: 'labors#report_labor', as: 'report_labor'
 
   get "welcome/home"
+  get '/hours_report/select', to: 'welcome#select_dates_for_hours'
+  post '/hours_report/show', to: 'welcome#get_employee_hours_for_dates'
+
   root 'welcome#home'
 
 

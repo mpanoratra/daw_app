@@ -29,11 +29,15 @@
   </div>
   <div class="field">
     <%= label_tag :unit_id %><br>
-    <%= collection_select("unit_id","", @units, :id, :name_or_address) %>
+    <select name="unit_select" id="unit_select">
+      
+    </select>
   </div>
   <div class="field">
     <%= f.label :task_id %><br>
-    <%= f.collection_select(:task_id, @tasks, :id, :trade) %>
+    <select name="task_select" id="task_select">
+      
+    </select>
   </div>
   <div class="actions">
     <%= f.submit %>

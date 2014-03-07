@@ -7,9 +7,14 @@ class LaborsController < ApplicationController
     @labors = Labor.all
   end
 
-  def report_labor
-    
+  def select_employees_for_report
+    @projects = Project.all
   end
+
+  def report_labor
+  end
+
+  def
 
 
   # GET /labors/1

@@ -23,6 +23,13 @@ class ProjectsController < ApplicationController
       @units = @project.units
     end
   end
+  
+  def get_employees
+    if Project.exists?(params[:id])
+      @project = Project.find(params[:id])
+      @employees = @project.employees
+    end
+  end
 
   def add_user_to_project
     @possible_users = User.where.not(id: (@project.users.pluck(:id)))
