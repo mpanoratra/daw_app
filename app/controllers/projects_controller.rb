@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy, :add_user_to_project, :save_user_project]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :add_user_to_project, :save_user_project, :add_employee_to_project, :save_employee_project]
 
   # GET /projects
   # GET /projects.json
@@ -41,6 +41,15 @@ class ProjectsController < ApplicationController
     redirect_to @project
   end
 
+  def add_employee_to_project
+    @possible_employees = Employee.where.not(id: (@project.employees.pluck(:id)))
+  end
+
+  def save_employee_project
+    emp = Employee.find(params[:employee_id])
+    @project.employees << emp
+    redirect_to @project
+  end
 
   # GET /projects/1/edit
   def edit

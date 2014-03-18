@@ -4,10 +4,13 @@ HoursApp::Application.routes.draw do
   resources :employees
   resources :users, only: [:index]
   resources :projects_users, only: [:destroy]
+  resources :employees_projects, only: [:destroy]
 
   resources :projects 
   get 'projects/:id/add_user_to_project', to: 'projects#add_user_to_project', as: 'add_user_to_project'
   post 'projects/:id/save_user_project', to: 'projects#save_user_project', as: 'save_user_project'
+  get 'projects/:id/add_employee_to_project', to: 'projects#add_employee_to_project', as: 'add_employee_to_project'
+  post 'projects/:id/save_employee_project', to: 'projects#save_employee_project', as: 'save_employee_project'
   get 'projects/:id/get_units', to: 'projects#get_units', as: 'get_project_units'
 
   resources :units

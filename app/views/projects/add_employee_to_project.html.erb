@@ -1,0 +1,10 @@
+<% if @possible_employees.blank? %>
+  All employees are currently assigned to this project already.
+<% else %>
+  Add an employee to <%= @project.name %>
+  <%= form_tag save_employee_project_path(@project) do %>
+    <%= collection_select(:employee_id, "", @possible_employees, :id, :name) %>
+    <%= button_tag "Add Employee" %>
+  <% end %>
+<% end %>
+<%= link_to 'Back', @project %>

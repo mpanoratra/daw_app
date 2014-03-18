@@ -47,5 +47,30 @@
 </div>
 
 
+<div id="project_users">
+  <table>
+    <thead>
+      <tr>
+        <th>Employees assigned to this project:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @project.employees.blank? %>
+        <tr>
+          <td>No employees are currently assigned to this project!</td>
+        </tr>
+      <% else %>
+        <% @project.employees.each do |employee| %>
+          <tr>
+            <td><%= employee.name %></td>
+            <td><%= link_to "Remove employee from project", employees_project_path((@project.employees_projects.find_by_employee_id(employee.id)).id), method: 'delete' %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Add an employee to this project", add_employee_to_project_path(@project) %>
+</div>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

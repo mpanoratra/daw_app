@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   has_many :employees, through: :employees_projects
+  has_many :employees_projects
   has_many :users, through: :projects_users
   has_many :subcontractors, through: :projects_subcontractors
   has_many :subcontractors
